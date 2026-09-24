@@ -1,0 +1,40 @@
+###=========Doctor==========###
+#Api call for listing all doctor
+###
+GET http://127.0.0.1:8000/doctor
+Accept: application/json
+
+#Api call for Adding doctor
+###
+POST  http://127.0.0.1:8000/doctor/
+Content-Type: application/json
+
+{
+    "name":"abcc",
+    "specialization":"ccccc",
+    "fee":1500,
+    "qualification":"mbbs",
+    "email":"abcc111@gmail.com"
+}
+
+#Api Call for Retrive Doctor Detail
+###
+GET http://127.0.0.1:8000/doctor/1/
+Accept: application/json
+
+#Api Call for Updating  Doctor Detail
+###
+PUT  http://127.0.0.1:8000/doctor/1/
+Content-Type: application/json
+
+{
+    "name":"zzz",
+    "specialization":"accddcc",
+    "fee":1523,
+    "qualification":"mbbs",
+    "email":"zzz@gmail.com"
+}
+
+#Api Call for Delete Doctor
+###
+DELETE  http://127.0.0.1:8000/doctor/2/
