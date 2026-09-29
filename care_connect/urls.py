@@ -16,11 +16,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+
 from staff.views import DoctorsListCreateView,DoctorRetriveUpdateDeleteView
+from staff_v2 import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('doctor/',DoctorsListCreateView.as_view()),
     path('doctor/<int:pk>/',DoctorRetriveUpdateDeleteView.as_view()),
+    
+    path('v2/doctor/',views.DoctorCreateListView.as_view()),
+    path('v2/doctor/<int:pk>/',views.DoctorRetriveUpdateDaleteView.as_view()),
+
+    path('v2/user/',views.UserCreateView.as_view()),
 
 ]
