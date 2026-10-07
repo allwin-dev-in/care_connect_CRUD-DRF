@@ -40,9 +40,11 @@ class Doctor(models.Model):
 
     qualification = models.CharField(max_length=200)
 
+
     email = models.EmailField(unique=True)
 
     #string representaion of object 
     def __str__(self):
 
         return self.name
+

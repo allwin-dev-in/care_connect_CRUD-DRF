@@ -15,11 +15,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 
 from staff.views import DoctorsListCreateView,DoctorRetriveUpdateDeleteView
 from staff_v2 import views
 
+from bookings.views import AppointmentCreateListView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,5 +31,10 @@ urlpatterns = [
     path('v2/doctor/<int:pk>/',views.DoctorRetriveUpdateDaleteView.as_view()),
 
     path('v2/user/',views.UserCreateView.as_view()),
+
+    path('appointments/',AppointmentCreateListView.as_view()),
+
+    path("v2/booking/",include("booking_v2.urls"))
+
 
 ]

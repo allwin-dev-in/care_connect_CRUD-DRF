@@ -51,7 +51,7 @@ Accept: application/json
 ###
 POST  http://127.0.0.1:8000/v2/doctor/
 Content-Type: application/json
-
+Authorization: Basic admin:admin
 {
     "name":"abcc",
     "specialization":"hematology",
@@ -64,6 +64,7 @@ Content-Type: application/json
 ###
 GET http://127.0.0.1:8000/v2/doctor/1
 Accept: application/json
+Authorization: Basic user:password123
 
 #Api Call for Updating  Doctor Detail
 ###
@@ -88,3 +89,65 @@ Content-Type: application/json
     "email":"adminuser@gmail.com",
     "password":"adminuser"
 }
+
+
+
+### ___Appointments___###
+#Api call for listing appointments
+###
+GET http://127.0.0.1:8000/appointments/
+Accept: application/json
+
+#Api call for adding appointment
+###
+POST http://127.0.0.1:8000/appointments/
+Content-Type: application/json
+
+{
+    "patient_name":"patient01",
+    "phone":"987456123",
+    "doctor":1,
+    "appointment_date":"2026-10-30",
+    "problem":"pain in kneee"
+}
+
+
+## V2
+
+#Api call to add new user
+###
+POST http://127.0.0.1:8000/v2/booking/signup/
+Content-Type: application/json
+
+{
+    "username":"user123",
+    "email":"user@gmail.com",
+    "password":"password123"
+}
+
+#Api call for listing appointment
+###
+GET  http://127.0.0.1:8000/v2/booking/appointment/
+Accept: application/json
+
+#Api call for adding appointment
+###
+POST http://127.0.0.1:8000/v2/booking/appointment/
+Content-Type: application/json
+Authorization: Basic user:password123
+
+{
+    "patient_name": "patient333",
+    "phone": "9874561231",
+    "appointment_date": "2026-10-17",
+    "problem": "pain in kneee",
+    "doctor":1
+}
+
+#Api call for retriving appointment id=1
+###
+GET http://127.0.0.1:8000/v2/booking/appointment/10
+Accept: application/json
+Authorization: Basic user:password123
+
+#api call for updating
