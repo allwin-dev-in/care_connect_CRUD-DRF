@@ -41,17 +41,22 @@ DELETE  http://127.0.0.1:8000/doctor/2/
 
 
 
+#----------------------------------------------------------------------------#
+
+
+
 #___ V2 method ___#
 #Api call for listing all doctor
 ###
 GET http://127.0.0.1:8000/v2/doctor
 Accept: application/json
 
+
 #Api call for Adding doctor
 ###
 POST  http://127.0.0.1:8000/v2/doctor/
 Content-Type: application/json
-Authorization: Basic admin:admin
+
 {
     "name":"abcc",
     "specialization":"hematology",
@@ -107,8 +112,9 @@ Content-Type: application/json
     "patient_name":"patient01",
     "phone":"987456123",
     "doctor":1,
-    "appointment_date":"2026-10-30",
+    "appointment_date":"2026-11-30",
     "problem":"pain in kneee"
+
 }
 
 
@@ -137,11 +143,12 @@ Content-Type: application/json
 Authorization: Basic user:password123
 
 {
-    "patient_name": "patient333",
-    "phone": "9874561231",
-    "appointment_date": "2026-10-17",
+    "patient_name": "allwin",
+    "phone": "974758788",
+    "appointment_date": "2026-11-17",
     "problem": "pain in kneee",
-    "doctor":1
+    "doctor":1,
+    "email":"allwingraison@gmail.com"
 }
 
 #Api call for retriving appointment id=1

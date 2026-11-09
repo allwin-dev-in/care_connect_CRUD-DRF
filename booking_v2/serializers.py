@@ -3,7 +3,7 @@ from rest_framework import serializers
 
 from django.contrib.auth.models import User
 
-from bookings.models import Appointment
+from booking_v2.models import Appointment
 
 from datetime import datetime
 
@@ -14,8 +14,6 @@ class SignupSerializer(serializers.ModelSerializer):
         fields=["username","email","password"]
 
 class AppiontmentSeralizer(serializers.ModelSerializer):
-    doctor=serializers.StringRelatedField() 
-
     class Meta:
         model=Appointment
         fields="__all__"

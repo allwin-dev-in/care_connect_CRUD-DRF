@@ -5,7 +5,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import authentication,permissions
 
-from staff.models import Doctor
+from staff_v2.models import Doctor
 from staff_v2.serializer import DoctorSerializer,UserSerializer
 
 
@@ -13,8 +13,8 @@ from staff_v2.serializer import DoctorSerializer,UserSerializer
 
 class DoctorCreateListView(APIView):
 
-    authentication_classes=[authentication.BasicAuthentication]
-    permission_classes=[permissions.IsAdminUser]
+    # authentication_classes=[authentication.BasicAuthentication]
+    # permission_classes=[permissions.IsAdminUser]
 
     def get(self,request):
         qs=Doctor.objects.all()
